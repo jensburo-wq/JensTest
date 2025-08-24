@@ -1,10 +1,18 @@
 # JensTest
 
-This repository contains a simple terminal-based Tetris game written in Python using the `curses` module.
+This repository contains a graphical Tetris clone written in Python
+using the `pygame` library. Blocks are rendered in a window and the
+next piece, score and level are displayed on a side panel.
 
 ## Running
 
-Ensure you are in a terminal that supports `curses` and run:
+Install the pygame dependency if necessary:
+
+```bash
+pip install pygame
+```
+
+Then run:
 
 ```bash
 python tetris.py
@@ -12,9 +20,12 @@ python tetris.py
 
 ## Controls
 
-- `a` or Left Arrow: move left
-- `d` or Right Arrow: move right
-- `s` or Down Arrow: move down
-- `w`, Up Arrow, Space, or Enter: rotate piece
+- Left Arrow: move piece left
+- Right Arrow: move piece right
+- Down Arrow: soft drop
+- Up Arrow or Space: rotate piece
 
-Lines are cleared as you complete them and the score is displayed on the right. The game ends when new pieces can no longer enter the board.
+Lines are cleared as you complete them. Clearing multiple lines at once
+awards more points and increases your level, which speeds up the
+falling blocks. The game ends when new pieces can no longer enter the
+board.
